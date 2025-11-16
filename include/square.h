@@ -48,10 +48,7 @@ public:
         vertices[3] = std::make_unique<Point<T>>(p4);
     }
 
-    Square(std::unique_ptr<Point<T>> p1,
-           std::unique_ptr<Point<T>> p2,
-           std::unique_ptr<Point<T>> p3,
-           std::unique_ptr<Point<T>> p4) {
+    Square(std::unique_ptr<Point<T>> p1, std::unique_ptr<Point<T>> p2, std::unique_ptr<Point<T>> p3, std::unique_ptr<Point<T>> p4) {
         vertices[0] = std::move(p1);
         vertices[1] = std::move(p2);
         vertices[2] = std::move(p3);
@@ -95,8 +92,7 @@ public:
     }
 
     operator double() const override {
-        double side = std::sqrt(std::pow(vertices[1]->x - vertices[0]->x, 2) +
-                                std::pow(vertices[1]->y - vertices[0]->y, 2));
+        double side = std::sqrt(std::pow(vertices[1]->x - vertices[0]->x, 2) + std::pow(vertices[1]->y - vertices[0]->y, 2));
         return side * side;
     }
 };

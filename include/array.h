@@ -11,8 +11,7 @@ private:
     std::unique_ptr<T[]> m_data;
 
 public:
-    Array(size_t capacity = 0)
-        : m_size(0), m_capacity(capacity), m_data(std::make_unique<T[]>(capacity))
+    Array(size_t capacity = 0) : m_size(0), m_capacity(capacity), m_data(std::make_unique<T[]>(capacity))
     {}
 
     size_t size() const {
